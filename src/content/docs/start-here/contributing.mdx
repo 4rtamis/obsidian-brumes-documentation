@@ -1,0 +1,78 @@
+---
+title: "Contributing"
+description: "Contributing to Brumes for Obsidian."
+sidebar:
+  order: 3
+---
+
+I first created this theme for my personal use of Obsidian when designing City
+of Mist cases. Some parts of the theme are poorly designed and I believe there
+are many ways to improve the foundation I developed.
+
+If you would like to propose new features, improvements, corrections, support
+for plugins or report a bug, do not hesitate to open a pull request.
+
+If you have any questions, you will likely find some help on the
+[City of Mist RPG Discord](https://discord.gg/jH686wH) (tag **@4rtamis** in the
+appropriate channel, for instance).
+
+## Setup
+
+In order to start working on this theme, create a fork of it and clone it on
+your computer. Please use new branches for contributions.
+
+You will need [NodeJS](https://nodejs.org/en) (and npm) to install the packages
+and [Ruby](https://www.ruby-lang.org) (and gem) to install the sass compiler I
+use.
+
+The first time you open the project, you can use the following setup if you are
+on Linux. You should be able to adapt it easily for other OS (like Windows).
+
+```bash
+sudo gem install sass
+npm install -g grunt-cli
+```
+
+Then, open a terminal inside the root directory of the project and run:
+
+```bash
+npm install
+```
+
+## Workflow
+
+Create an Obsidian vault to live-test your modifications. Optionally, you can
+use the
+[one provided in the repository](https://github.com/4rtamis/obsidian-brumes/tree/master/demo).
+Then, copy `.env.example` and rename it to `.env`. Change the OBSIDIAN_PATH
+value to the path of your test vault theme folder (the path should end with
+`/.obsidian/themes/`)
+
+Open a terminal and type:
+
+```bash
+grunt
+```
+
+This will start a [GruntJS](https://gruntjs.com/) task runner that will
+automatically compile when saving any CSS or SCSS file from the `src` directory.
+It creates two files: `theme.css`, which is the distribution file, and
+`Brumes.css`, which is an unminified copy of the theme.
+
+## Submit your changes
+
+Once you are happy with your work, you can submit it to the original Brumes
+project using a pull request. Please be specific in your commit messages,
+especially while doing the pull request. Use multiline commit messages when
+needed.
+
+:::caution
+
+Be careful of licenses when adding assets to the theme. Fonts and images need to
+be embedded in the CSS using Base64, but that does not change the fact that most
+assets are probably under some license. Some licenses (like MIT) need to appear
+in the final CSS theme. You can use
+[`license.css`](https://github.com/4rtamis/obsidian-brumes/tree/master/src/css/license.css)
+to add them to the project.
+
+:::

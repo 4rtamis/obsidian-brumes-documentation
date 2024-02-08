@@ -23,19 +23,9 @@ export default defineConfig({
           },
         },
         {
-          label: "Guides",
-          items: [
-            // Each item here is one entry in the navigation menu.
-            {
-              label: "Example Guide",
-              link: "/guides/example/",
-            },
-          ],
-        },
-        {
-          label: "Reference",
+          label: "Features",
           autogenerate: {
-            directory: "reference",
+            directory: "features",
           },
         },
       ],
